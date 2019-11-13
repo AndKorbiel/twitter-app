@@ -1,9 +1,9 @@
 getData = () => {
   const $app = document.getElementById("app");
 
-
   fetch("http://localhost:8080/search", { mode: "no-cors" })
     .then(res => {
+        console.log(res)
       return res.json();
     })
     .then(myJSON => {
