@@ -17,18 +17,16 @@ const client = new Twitter({
   access_token_secret: "plaBaN0cNECRRxY9tg7jASzmB5aEy7GRd0f4mXBpgXlGD",
 });
 
-const searchQueryM = { q: "", count: 100, lang: "pl", from: "MorawieckiM", tweet_mode: "extended"};
-const searchQueryS = { q: "", count: 100, lang: "pl", from: "SchetynadlaPO", tweet_mode: "extended"};
+const searchQueryM = { q: "from:MorawieckiM+OR+from:SchetynadlaPO", count: 100, lang: "pl", tweet_mode: "extended"};
 
 /* Routes */
 app.get("/search", function(req, res) {
 
-    client.get('search/tweets', searchQueryS, function(error, tweets, response) {
+    client.get('search/tweets', searchQueryM, function(error, tweets, response) {
         if(error) throw error;
-
-        res.json(tweets.statuses);
+        console.log(tweets.statuses)
+        res.send(tweets.statuses)
     });
-
 });
 
 
