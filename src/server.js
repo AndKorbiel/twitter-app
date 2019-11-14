@@ -22,10 +22,20 @@ const searchQueryM = { q: "from:MorawieckiM+OR+from:SchetynadlaPO", count: 100, 
 /* Routes */
 app.get("/search", function(req, res) {
 
-    client.get('search/tweets', searchQueryM, function(error, tweets, response) {
+    let keyword = req.query.keyword;
+    let userList = "MorawieckiM+OR+from:SchetynadlaPO";
+
+    client.get('search/tweets',
+        { q: keyword+"from:"+userList, count: 100, lang: "pl", tweet_mode: "extended"}
+        , function(error, tweets, response) {
         if(error) throw error;
         res.send(tweets.statuses)
     });
+
+    // client.get('search/tweets', searchQueryM, function(error, tweets, response) {
+    //     if(error) throw error;
+    //     res.send(tweets.statuses)
+    // });
 });
 
 

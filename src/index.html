@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Page Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
-    <button onClick="getData()">click me</button>
-    <script type="text/javascript" src="js/index.js"></script>
-    <div id="app">
-      <div id="left"></div>
-      <div id="right"></div>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <p>Lewica</p>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary addButton" value="@tvn24">Tomasz Siemoniak</button>
+                    <button type="button" class="btn btn-secondar addButton" value="@Gazeta_wyborcza">Tomasz Lis</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@Radio_TOK_FM">TVN 24</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@KonradPiasecki">TVN 24</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@lis_tomasz">TVN 24</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@KolendaK">TVN 24</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@skorzynski">TVN 24</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@MSzuldrzynski">TVN 24</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@TomaszSiemoniak">TVN 24</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@Platforma_org">TVN 24</button>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <p>Prawica</p>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary addButton" value="@Jaroslaw_Gowin">Andrzej Duda</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@tvp_info">Mateusz Morawiecki</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@rzeczpospolita">PIS.org.pl</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@lkwarzecha">PIS.org.pl</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@cezarygmyz">PIS.org.pl</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@michalkarnowski">PIS.org.pl</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@AndrzejDuda">PIS.org.pl</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@BeataSzydlo">PIS.org.pl</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@pisorgpl">PIS.org.pl</button>
+                    <button type="button" class="btn btn-secondary addButton" value="@jbrudzinski">PIS.org.pl</button>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter keyword" id="keyword" value="">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onClick="searchKeyword()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
+</header>
+<script type="text/javascript" src="js/index.js"></script>
+<div id="app">
+    <div id="left"></div>
+    <div id="right"></div>
+</div>
+</body>
 </html>

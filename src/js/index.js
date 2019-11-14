@@ -1,12 +1,31 @@
-getData = () => {
+let bts = document.querySelectorAll('.addButton')
 
-  fetch("http://localhost:8080/search", { mode: "no-cors" })
-    .then(res => {
-        console.log(res)
-      return res.json();
-    })
-    .then(myJSON => {
-        console.log(myJSON)
+bts.forEach(el => {
+    el.addEventListener("click", (e)=> console.log(e.target.value))
+})
+
+searchKeyword = () => {
+    let keyword = document.getElementById('keyword').value;
+    let bt = document.getElementById('tvn').value;
+
+    let usersList = [];
+
+    for (let i = 0; i <10; i++) {
+        usersList.push("+OR+from:")
+    }
+
+    document.getElementById("right").innerHTML = '';
+    document.getElementById("left").innerHTML = '';
+
+    fetch("http://localhost:8080/search?keyword=" + keyword)
+        .then(res => {
+            return res.json();
+        })
+        .then(myJSON => divideData(myJSON))
+        .catch(error => console.error("Error:", error));
+};
+
+divideData = (myJSON) => {
         for (let i = 0; i < myJSON.length; i++) {
             let userName = myJSON[i].user.name,
                 profilePhoto = myJSON[i].user.profile_image_url_https,
@@ -31,11 +50,9 @@ getData = () => {
                 <p>${date}</p>
                 <p>${fullText}</p>
                 <p><span class="favorite">${favourites}</span></p>
-                <div class="images"> 
-                ${imgs}    
+                <div class="images">
+                ${imgs}
                 </div>
                 </div>`;
         }
-    })
-    .catch(error => console.error("Error:", error));
 };
