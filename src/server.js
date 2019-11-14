@@ -24,7 +24,6 @@ app.get("/search", function(req, res) {
 
     client.get('search/tweets', searchQueryM, function(error, tweets, response) {
         if(error) throw error;
-        console.log(tweets.statuses)
         res.send(tweets.statuses)
     });
 });

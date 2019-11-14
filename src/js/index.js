@@ -1,5 +1,4 @@
 getData = () => {
-  const $app = document.getElementById("app");
 
   fetch("http://localhost:8080/search", { mode: "no-cors" })
     .then(res => {
@@ -17,8 +16,14 @@ getData = () => {
                 fullText = myJSON[i].full_text,
                 favourites = myJSON[i].favorite_count,
                 imgSrc = myJSON[i].extended_entities != undefined ? myJSON[i].extended_entities.media[0].media_url : '',
-                imgs = imgSrc != '' ? `<img src=${imgSrc} />` : ``;
+                imgs = imgSrc != '' ? `<img src=${imgSrc} />` : ``,
+                $app = '';
 
+            if (userName === 'Mateusz Morawiecki') {
+                $app = document.getElementById("right");
+            } else {
+                $app = document.getElementById("left");
+            }
             $app.innerHTML += `<div class="singleT">
                 <h1>${userName}<img src=${profilePhoto} /></h1>
                 <p>${followersCount}</p>
