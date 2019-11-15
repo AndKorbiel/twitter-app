@@ -1,23 +1,30 @@
 let bts = document.querySelectorAll('.addButton')
+let usersList = [];
 
 bts.forEach(el => {
-    el.addEventListener("click", (e)=> console.log(e.target.value))
-})
+    el.addEventListener("click", (e)=> {
+        let userName = e.target.value;
+        if (usersList.indexOf(userName) == -1) {
+            usersList.push(userName)
+        } else {
+            usersList = usersList.filter(el => el != userName)
+        }
+    })
+});
 
 searchKeyword = () => {
     let keyword = document.getElementById('keyword').value;
-    let bt = document.getElementById('tvn').value;
 
-    let usersList = [];
+    let queryList = usersList.reduce((prev, next) => {
+        return prev + "+OR+from:" + next;
+    })
 
-    for (let i = 0; i <10; i++) {
-        usersList.push("+OR+from:")
-    }
+    console.log(queryList)
 
     document.getElementById("right").innerHTML = '';
     document.getElementById("left").innerHTML = '';
 
-    fetch("http://localhost:8080/search?keyword=" + keyword)
+    fetch("http://localhost:8080/search?keyword=" + keyword + "&queryList=" + queryList)
         .then(res => {
             return res.json();
         })
@@ -44,14 +51,17 @@ divideData = (myJSON) => {
                 $app = document.getElementById("left");
             }
             $app.innerHTML += `<div class="singleT">
-                <h1>${userName}<img src=${profilePhoto} /></h1>
-                <p>${followersCount}</p>
-                <h2>${userDesc}</h2>
-                <p>${date}</p>
-                <p>${fullText}</p>
-                <p><span class="favorite">${favourites}</span></p>
-                <div class="images">
-                ${imgs}
+                <img src=${profilePhoto} class="profile" />  
+                <div class="about">
+                    <h2>${userName}</h2>
+                    <h4>${userDesc}</h4>
+                    <p class="followers"><span class="bold">${followersCount}</span> following</p>
+                </div>
+                <div class="news">
+                    <p class="date">${date}</p>
+                    <p>${fullText}</p>
+                    <p><span class="favorite">${favourites}</span></p>
+                    <div class="images">${imgs}</div>
                 </div>
                 </div>`;
         }

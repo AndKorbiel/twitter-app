@@ -23,19 +23,14 @@ const searchQueryM = { q: "from:MorawieckiM+OR+from:SchetynadlaPO", count: 100, 
 app.get("/search", function(req, res) {
 
     let keyword = req.query.keyword;
-    let userList = "MorawieckiM+OR+from:SchetynadlaPO";
+    let usersList = req.query.queryList;
 
     client.get('search/tweets',
-        { q: keyword+"from:"+userList, count: 100, lang: "pl", tweet_mode: "extended"}
+        { q: keyword+"from:"+usersList, count: 10, lang: "pl", tweet_mode: "extended"}
         , function(error, tweets, response) {
         if(error) throw error;
         res.send(tweets.statuses)
     });
-
-    // client.get('search/tweets', searchQueryM, function(error, tweets, response) {
-    //     if(error) throw error;
-    //     res.send(tweets.statuses)
-    // });
 });
 
 
