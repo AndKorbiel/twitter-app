@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title>Tweety z Polski</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
 </head>
 <body>
 <header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-5">
-                <p>Lewica</p>
-                    <button type="button" class="btn btn-secondary addButton" value="tvn24">TVN24</button>
-                    <button type="button" class="btn btn-secondar addButton" value="Gazeta_wyborcza">Gazeta Wyborcza</button>
-                    <button type="button" class="btn btn-secondary addButton" value="Radio_TOK_FM">Radio TOK FM</button>
-                    <button type="button" class="btn btn-secondary addButton" value="KonradPiasecki">Konrad Piasecki
-                    </button>
-                    <button type="button" class="btn btn-secondary addButton" value="lis_tomasz">Tomasz Lis</button>
-                    <button type="button" class="btn btn-secondary addButton" value="KolendaK">Katarzyna Kolenda-Zaleska
-                    </button>
-                    <button type="button" class="btn btn-secondary addButton" value="MSzuldrzynski">Michał Szułdrzyński
-                    </button>
-                    <button type="button" class="btn btn-secondary addButton" value="TomaszSiemoniak">Tomasz Siemoniak
-                    </button>
-                    <button type="button" class="btn btn-secondary addButton" value="Platforma_org">Platforma
-                        Obywatelska
-                    </button>
+            <div class="col-sm-12 col-md-12 col-lg-5">
+                <p>Tweety wybranych osób z lewicy</p>
+                <button type="button" class="btn btn-primary addButton" value="tvn24">TVN24</button>
+                <button type="button" class="btn btn-primary addButton" value="Gazeta_wyborcza">Gazeta Wyborcza</button>
+                <button type="button" class="btn btn-primary addButton" value="Radio_TOK_FM">Radio TOK FM</button>
+                <button type="button" class="btn btn-primary addButton" value="KonradPiasecki">Konrad Piasecki
+                </button>
+                <button type="button" class="btn btn-primary addButton" value="lis_tomasz">Tomasz Lis</button>
+                <button type="button" class="btn btn-primary addButton" value="KolendaK">Katarzyna Kolenda-Zaleska
+                </button>
+                <button type="button" class="btn btn-primary addButton" value="MSzuldrzynski">Michał Szułdrzyński
+                </button>
+                <button type="button" class="btn btn-primary addButton" value="TomaszSiemoniak">Tomasz Siemoniak
+                </button>
+                <button type="button" class="btn btn-primary addButton" value="Platforma_org">Platforma
+                    Obywatelska
+                </button>
             </div>
-            <div class="col-sm-12 col-md-5">
-                <p>Prawica</p>
-                    <button type="button" class="btn btn-secondary addButton" value="Jaroslaw_Gowin">Jaroslaw Gowin
-                    </button>
-                    <button type="button" class="btn btn-secondary addButton" value="tvp_info">TVP Info</button>
-                    <button type="button" class="btn btn-secondary addButton" value="rzeczpospolita">Rzeczpospolita
-                    </button>
-                    <button type="button" class="btn btn-secondary addButton" value="lkwarzecha">Łukasz Warzecha
-                    </button>
-                    <button type="button" class="btn btn-secondary addButton" value="cezarygmyz">Cezary Gmyz</button>
-                    <button type="button" class="btn btn-secondary addButton" value="michalkarnowski">Micha Karnowski
-                    </button>
-                    <button type="button" class="btn btn-secondary addButton" value="AndrzejDuda">Andrzej Duda</button>
-                    <button type="button" class="btn btn-secondary addButton" value="BeataSzydlo">Beata Szydło</button>
-                    <button type="button" class="btn btn-secondary addButton" value="pisorgpl">PIS</button>
-                    <button type="button" class="btn btn-secondary addButton" value="jbrudzinski">Joachim Brudziński</button>
+            <div class="col-sm-12 col-md-12 col-lg-5">
+                <p>Tweety wybranych osób z prawicy</p>
+                <button type="button" class="btn btn-primary addButton" value="Jaroslaw_Gowin">Jaroslaw Gowin
+                </button>
+                <button type="button" class="btn btn-primary addButton" value="tvp_info">TVP Info</button>
+                <button type="button" class="btn btn-primary addButton" value="rzeczpospolita">Rzeczpospolita
+                </button>
+                <button type="button" class="btn btn-primary addButton" value="lkwarzecha">Łukasz Warzecha
+                </button>
+                <button type="button" class="btn btn-primary addButton" value="cezarygmyz">Cezary Gmyz</button>
+                <button type="button" class="btn btn-primary addButton" value="michalkarnowski">Michał Karnowski
+                </button>
+                <button type="button" class="btn btn-primary addButton" value="AndrzejDuda">Andrzej Duda</button>
+                <button type="button" class="btn btn-primary addButton" value="BeataSzydlo">Beata Szydło</button>
+                <button type="button" class="btn btn-primary addButton" value="pisorgpl">PIS</button>
+                <button type="button" class="btn btn-primary addButton" value="jbrudzinski">Joachim Brudziński</button>
             </div>
-            <div class="col-sm-12 col-md-2">
+            <div class="col-sm-12 col-md-12 col-lg-2">
+                <p>Szukane słowo kluczowe</p>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Enter keyword" id="keyword" value="">
+                    <input type="text" class="form-control" placeholder="..." id="keyword" value="">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-                                onClick="searchKeyword()">Search
+                        <button class="btn btn-primary" type="button" id="button-addon2"
+                                onClick="searchKeyword()">Szukaj
                         </button>
                     </div>
                 </div>

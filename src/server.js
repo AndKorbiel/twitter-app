@@ -17,8 +17,6 @@ const client = new Twitter({
   access_token_secret: "plaBaN0cNECRRxY9tg7jASzmB5aEy7GRd0f4mXBpgXlGD",
 });
 
-const searchQueryM = { q: "from:MorawieckiM+OR+from:SchetynadlaPO", count: 100, lang: "pl", tweet_mode: "extended"};
-
 /* Routes */
 app.get("/search", function(req, res) {
 
@@ -26,7 +24,7 @@ app.get("/search", function(req, res) {
     let usersList = req.query.queryList;
 
     client.get('search/tweets',
-        { q: keyword+"from:"+usersList, count: 10, lang: "pl", tweet_mode: "extended"}
+        { q: keyword+"from:"+usersList, count: 50, lang: "pl", tweet_mode: "extended"}
         , function(error, tweets, response) {
         if(error) throw error;
         res.send(tweets.statuses)
